@@ -25,7 +25,7 @@ ConnectionStrings:
 
 AllowedHosts: "central.spacestation14.io"
 
-urls: "http://localhost:27689/"
+urls: "http://0.0.0.0:27689/"
 
 PathBase: "/admin"
 
@@ -35,8 +35,8 @@ ForwardProxies:
     - 127.0.0.1
 
 Auth:
-    Authority: "https://central.spacestation14.io/web/"
+    Authority: "https://account.spacestation14.com/"
     ClientId: "9e2ce26f-28ba-4232-b4d9-8cc08993b33e"
     ClientSecret: "foobar"
 
-authServer: "https://central.spacestation14.io/auth"
+authServer: "https://auth.spacestation14.com"
