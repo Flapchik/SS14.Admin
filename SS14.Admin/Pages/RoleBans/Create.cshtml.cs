@@ -66,8 +66,8 @@ namespace SS14.Admin.Pages.RoleBans
                 RoleId = Input.Role.Trim()
             };
 			
-			var ipAddr = Input.IP;
-            var hwid = Input.HWid;
+			var ipAddr = Input.IP.ToString();
+            var hwid = Input.HWid.ToString();
 			
 			if (Input.UseLatestHwid || Input.UseLatestIp)
             {
@@ -85,7 +85,7 @@ namespace SS14.Admin.Pages.RoleBans
                 }
 
                 ipAddr = Input.UseLatestIp ? lastInfo.Value.address.ToString() : Input.IP;
-                hwid = Input.UseLatestHwid ? (lastInfo.Value.hwid is { } h ? Convert.ToBase64String(h) : null) : Input.HWid;
+                hwid = Input.UseLatestHwid ? lastInfo.Value.hwid?.ToString() : Input.HWid;
             }
 
             var error = await _banHelper.FillBanCommon(
@@ -110,4 +110,3 @@ namespace SS14.Admin.Pages.RoleBans
         }
     }
 }
-
